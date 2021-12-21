@@ -22,21 +22,27 @@
     function promo1($rebate1)
     {
         return $rebate1 * (3 / 100);
+
     }
     function promo2($rebate2)
     {
         return $rebate2 * (5 / 100);
     }
+    function reback()
+    {
+        return;
+    }
     $price1 = promo1(1000);
-    $total1 = 1000-$price1;
+    $price2 = promo2(5000);
+    $total1 = 1000 - $price1;
+    $total2 = 5000 - $price2;
     echo"ราคา 1000 บาท<br>";
     echo"ส่วนลด 3% "."ลดราคา $price1 บาท<br>";
     echo"ราคาสุทธิ $total1 บาท<br>";
-    $price2 = promo2(5000);
-    $total2 = 5000-$price2;
-    echo"ราคา 5000 บาท<br>";
+    echo"<br>ราคา 5000 บาท<br>";
     echo"ส่วนลด 5% "."ลดราคา $price2 บาท<br>";
     echo"ราคาสุทธิ $total2 บาท<br>";
+    echo""
     ?>
 </body>
 

@@ -24,6 +24,7 @@
     echo"นี้คือข้อความปกติ ที่อยู่ในไฟล์";
     echo "<hr>";
     echo "</center>";
+    showmessage();
     ?>
 </body>
 
