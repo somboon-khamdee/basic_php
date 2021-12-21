@@ -18,14 +18,12 @@
 </head>
 
 <body>
-    <h1>Array Colors</h1>
     <?php
     include"all_function.php";
     echo"<center>";
     echo"นี้คือข้อความปกติ ที่อยู่ในไฟล์";
     echo "<hr>";
     echo "</center>";
-    showmessage();
     ?>
 </body>
 

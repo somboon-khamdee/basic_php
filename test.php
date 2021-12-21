@@ -18,27 +18,25 @@
 </head>
 
 <body>
-    <h1>Array Colors</h1>
     <?php
-    $unit_price = 72; //ตั้งราคา ต่อกิโลกรัม (บาท)
-    $discount_unit_price = 69; // ราคาตามโปรโมชั่น
-    $discount_price = ($unit_price - $discount_unit_price); //ราคาที่ลดให้ (บาท)
-    $unit_discount = 2;     // ลดราคาเมื่อซื้อครบตามจำนวน (กิโลกรัม)
-
-    //กำหนดให้ลูกค้าซื้อหอยแครงไปทั้งหมด 2.22 กิโลกรัม
-    $total_weigth = isset($_POST['product_weight']) ? $_POST['product_weight'] : 2.22;
-
-    $price = ($total_weigth * $unit_price);                    //ราคารวมทั้งหมด
-    $promotion_unit = floor($total_weigth / $unit_discount);    //จำนวนที่ตรงกับโปรโมชั่น
-    $discount_weigth = ($promotion_unit * $unit_discount);    //จำนวนน้ำหนักที่จะลดราคา
-    $promotion_discount = ($discount_weigth * $discount_price);    //หาราคาที่มีส่วนลด เมื่อครบ 2 กิโลกรัม
-
-    $normal_weight = ($total_weigth - $discount_weigth);    // หาน้ำหนักสินค้า ที่ไม่อยู่ในโปรโมชั่น
-    $normal_price = ($normal_weight * $unit_price);            // น้ำหนักส่วนที่คิดราคาปกติ
-
-    $price_in_discount = ($promotion_unit * $unit_discount) * $discount_unit_price; //ราคาที่อยู่ในโปรโมชั่น
-
-    $total_price = ($price - $promotion_discount);            // คำนวณราคา ปกติ - ส่วนลด
+    function promo1($rebate1)
+    {
+        return $rebate1 * (3 / 100);
+    }
+    function promo2($rebate2)
+    {
+        return $rebate2 * (5 / 100);
+    }
+    $price1 = promo1(1000);
+    $total1 = 1000-$price1;
+    echo"ราคา 1000 บาท<br>";
+    echo"ส่วนลด 3% "."ลดราคา $price1 บาท<br>";
+    echo"ราคาสุทธิ $total1 บาท<br>";
+    $price2 = promo2(5000);
+    $total2 = 5000-$price2;
+    echo"ราคา 5000 บาท<br>";
+    echo"ส่วนลด 5% "."ลดราคา $price2 บาท<br>";
+    echo"ราคาสุทธิ $total2 บาท<br>";
     ?>
 </body>
 

@@ -18,7 +18,6 @@
 </head>
 
 <body>
-    <h1>Array Colors</h1>
     <?php
     function showmessage()
     {
