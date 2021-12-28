@@ -19,30 +19,24 @@
 
 <body>
     <?php
-    function promo1($rebate1)
-    {
-        return $rebate1 * (3 / 100);
+    $dice1 = rand(1, 6);
+    $dice2 = rand(1, 6);
+    $dice3 = rand(1, 6);
+    $total = $dice1+$dice2+$dice3;
+    echo $total;
 
+    if ($total = 3) {
+        echo " Low.";
     }
-    function promo2($rebate2)
-    {
-        return $rebate2 * (5 / 100);
+    elseif ($total = 10) {
+        echo " Medium.";
     }
-    function reback()
-    {
-        return;
+    elseif ($total = 12) {
+        echo " High.";
     }
-    $price1 = promo1(1000);
-    $price2 = promo2(5000);
-    $total1 = 1000 - $price1;
-    $total2 = 5000 - $price2;
-    echo"ราคา 1000 บาท<br>";
-    echo"ส่วนลด 3% "."ลดราคา $price1 บาท<br>";
-    echo"ราคาสุทธิ $total1 บาท<br>";
-    echo"<br>ราคา 5000 บาท<br>";
-    echo"ส่วนลด 5% "."ลดราคา $price2 บาท<br>";
-    echo"ราคาสุทธิ $total2 บาท<br>";
-    echo""
+    else {
+        echo "Error.";
+    }
     ?>
 </body>
 
