@@ -19,24 +19,32 @@
 
 <body>
     <?php
-    $dice1 = rand(1, 6);
-    $dice2 = rand(1, 6);
-    $dice3 = rand(1, 6);
-    $total = $dice1+$dice2+$dice3;
-    echo $total;
+    echo "เช็คการกรอกราคาสินค้า<br>";
+    if(isset($_POST['btn0']))
+    {
+       $price = $_POST['price'];
+       $checks = check_price($price);
+    }
+    function check_price($price)
+    {
+        if($price < 0)
+        {
+            return $checks = "กรอกข้อมูลไม่ถูกต้อง";
+        }
+        else
+        {
+            return $checks = "กรอกข้อมูลถูกต้อง";
+        }
+    }
+    ?>
 
-    if ($total = 3) {
-        echo " Low.";
-    }
-    elseif ($total = 10) {
-        echo " Medium.";
-    }
-    elseif ($total = 12) {
-        echo " High.";
-    }
-    else {
-        echo "Error.";
-    }
+    <form method="POST">
+        <input type="Text" name="price">
+        <input type="Submit" name="btn0" value="Check">
+    </form>
+    
+    <?php
+    echo "<br>".$checks;
     ?>
 </body>
 
