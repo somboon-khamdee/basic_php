@@ -20,14 +20,7 @@
 <body>
     <?php
     session_start();
-    if($_SESSION['sess_username']<>"")
-    {
-        echo $_SESSION['sess_username'];
-    }
-    else
-    {
-        echo "No Session";
-    }
+    session_destroy();
     ?>
 </body>
 
